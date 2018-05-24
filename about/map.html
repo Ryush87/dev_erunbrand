@@ -1,0 +1,49 @@
+<? include '../include/top.php' ?> <!-- top -->
+</head>
+<body>
+	<div id="wrap" class="pMapWrap">
+		<? include '../include/header.php' ?> <!-- header  -->
+		<div class="pageVisualBox"> <!-- pageVisual  -->
+			<div class="pageVisualT">
+				<div class="pageTitleBox">
+					<h3>ABOUT US</h3>
+					<div class="pageETitleBox">오시는길</div>
+				</div>
+			</div>
+			<div class="pageColorCover"></div>
+			<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+				<source src="<?=$root?>/skin/images/video/Bubbles.mp4">
+			</video>
+		</div>
+		<div class="wWrap"><ul class="snb snb_1d"></ul></div> <!-- snb -->
+		<div id="contents">
+			<div class="wWrap">
+				<div class="mapInfoBox grayBox">
+					<h5>(주)지앤티글로벌</h5>
+					<table>
+						<tr>
+							<th scope="col">대표전화</th>
+							<th scope="col">팩스</th>
+							<th scope="col">메일</th>
+							<th scope="col">주소</th>
+						</tr>
+						<tr>
+							<td>031-902-7227</td>
+							<td>031-902-7233</td>
+							<td>info@erunbrand.com</td>
+							<td>경기도 고양시 일산동구 백마로 195 SK엠시티타워(일반동) 12층</td>
+						</tr>
+					</table>
+				</div>
+				<div class="mapPreviewBox">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3158.76038712942!2d126.76947231581191!3d37.65483697978153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9ab64c9dfdc7%3A0x92e7a9394c3255fd!2zKOyjvCnsp4DslaTti7DquIDroZzrsow!5e0!3m2!1sko!2skr!4v1498542067667" width="1200" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+		<? include '../include/footer.php' ?> <!-- footer -->
+	</div>
+	<script type="text/javascript">
+		currentLocation("ABOUT US","오시는길"); //현재페이지 위치
+	</script>
+</body>
+</html>

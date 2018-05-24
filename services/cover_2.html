@@ -1,0 +1,89 @@
+<? include '../include/top.php' ?> <!-- top -->
+</head>
+<body>
+	<div id="wrap" class="pCoverWrap">
+		<? include '../include/header.php' ?> <!-- header  -->
+		<div class="pageVisualBox"> <!-- pageVisual  -->
+			<div class="pageVisualT">
+				<div class="pageTitleBox">
+					<h3>SERVICES</h3>
+					<div class="pageETitleBox">브랜드 소개서</div>
+				</div>
+			</div>
+			<div class="pageColorCover"></div>
+			<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+				<source src="<?=$root?>/skin/images/video/River.mp4">
+			</video>
+		</div>
+		<div class="wWrap"><ul class="snb snb_1d"></ul></div> <!-- snb -->
+		<div id="contents">
+			<div class="wWrap">
+				<ul class="pageTab mb50">
+					<li><a href="cover_1.html">브랜드소개서</a></li>
+					<li class="actOn"><a href="cover_2.html">Co-Marketing</a></li>
+					<li><a href="cover_3.html">라이센싱계약서</a></li>
+				</ul>
+				<div id="pageTabCon2" class="pageTabCon">
+					<div class="coverCaruselBox">
+						<div id="coverCWrap_2" class="coverCWrap">
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_01.jpg" alt="Co-Marketing" /></a></div>
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_02.jpg" alt="Co-Marketing" /></a></div>
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_03.jpg" alt="Co-Marketing" /></a></div>
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_04.jpg" alt="Co-Marketing" /></a></div>
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_05.jpg" alt="Co-Marketing" /></a></div>
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_06.jpg" alt="Co-Marketing" /></a></div>
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_07.jpg" alt="Co-Marketing" /></a></div>
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_08.jpg" alt="Co-Marketing" /></a></div>
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_09.jpg" alt="Co-Marketing" /></a></div>
+							<div class="mCaruselItem"><a href="#none"><img src="<?=$root?>/skin/images/services/cover_marketing_10.jpg" alt="Co-Marketing" /></a></div>
+						</div>
+						<ul id="coverCNavWrap_2" class="coverCNavWrap">
+							<li class="currentCover">1</li>
+							<li>/</li>
+							<li class="totalCover">14</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<? include '../include/footer.php' ?> <!-- footer -->
+	</div>
+	<!-- slickSlide s -->
+	<link rel="stylesheet" href="<?=$root?>/skin/plugin/slick_slide/slick.css">
+	<link rel="stylesheet" href="<?=$root?>/skin/plugin/slick_slide/slick-theme.css">
+	<script src="<?=$root?>/skin/plugin/slick_slide/slick.js"></script>
+	<!-- slickSlide e -->
+	<script type="text/javascript">
+		currentLocation("SERVICES","브랜드 소개서"); //현재페이지 위치
+		$(document).ready(function() {
+			$(".coverCWrap").slick({
+				arrows:true,
+				dots:false,
+				autoplay:false,
+				autoplaySpeed:3000,
+				infinite : true,
+				speed : 500,
+				slidesToShow:1,
+				adaptiveHeight:true
+			});
+			$('.coverCaruselBox').each(function(){
+				$(this).find('.coverCWrap').slick('slickGoTo',0);
+				$(this).find('.totalCover').html($(this).find('.mCaruselItem').length-2);
+				$(this).find('.coverCWrap').on('afterChange',function(event,slick,currentSlide){
+					var currentE=$(slick.$slides[currentSlide]);
+					var currentS=$(this).find('.mCaruselItem').index(currentE);
+					$(this).parent().find('.currentCover').html(currentS);
+				});
+			});
+			$(".pCoverWrap .pageTab a").click(function(){ //pageTab 클릭시 스크롤 이동
+				var targetObj=$(this).attr('data-target');
+				var targetIdx=Number($(".pCoverWrap .pageTab a").index($(this)))+1;
+				$(".pageTab li").removeClass("actOn");
+				$(this).parent().addClass("actOn");
+				objHide($(".pageTabCon"));
+				objShow($(targetObj));
+			});
+		});
+	</script>
+</body>
+</html>

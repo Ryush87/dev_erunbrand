@@ -1,0 +1,39 @@
+<? include '../include/top.php' ?> <!-- top -->
+</head>
+<body>
+	<div id="wrap" class="pBrandUseWrap">
+		<? include '../include/header.php' ?> <!-- header  -->
+		<div class="pageVisualBox"> <!-- pageVisual  -->
+			<div class="pageVisualT">
+				<div class="pageTitleBox">
+					<h3>SERVICES</h3>
+					<div class="pageETitleBox">브랜드사용절차</div>
+				</div>
+			</div>
+			<div class="pageColorCover"></div>
+			<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+				<source src="<?=$root?>/skin/images/video/River.mp4">
+			</video>
+		</div>
+		<div class="wWrap"><ul class="snb snb_1d"></ul></div> <!-- snb -->
+		<div id="contents">
+			<div class="wWrap">
+				<ul class="pageTab mb50">
+					<li class="actOn"><a href="#none" data-target="#pageTabCon1">License Out Flow</a></li>
+					<li><a href="#none" data-target="#pageTabCon2">License In Flow</a></li>
+				</ul>
+				<div id="pageTabCon1" class="pageTabCon">
+					<img src="<?=$root?>/skin/images/services/bland_use_img_01.jpg" alt="브랜드사용법 설명이미지" />
+				</div>
+				<div id="pageTabCon2" class="pageTabCon">
+					<img src="<?=$root?>/skin/images/services/bland_use_img_02.jpg" alt="브랜드사용법 설명이미지" />
+				</div>
+			</div>
+		</div>
+		<? include '../include/footer.php' ?> <!-- footer -->
+	</div>
+	<script type="text/javascript">
+		currentLocation("SERVICES","브랜드사용절차"); //현재페이지 위치
+	</script>
+</body>
+</html>
